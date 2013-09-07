@@ -1,0 +1,8 @@
+<h3>user</h3>
+<p>
+	<% if @user.photo.url %>
+		<%= image_tag @user.photo.url,width: 200, height: 300, alt: "photo" %>
+	<% end %>
+</p>
+<p>User:<%= @user.name %></p>
+<p>Email:<%= @user.email if @user.email %></p>

@@ -1,0 +1,34 @@
+<h3>Users</h3>
+<div class="span8">
+	<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th>username</th>
+				<th>Email</th>
+				<th>time</th>
+				<th>role</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= link_to user.name, user %></td>
+				<td><%= user.email %></td>
+				<td><%= user.created_at.to_date %></td>
+				<td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
+<!-- 				<td>
+					<a href="#role-options-<%= user.id %>" data-toggle="modal" class="btn btn-mini" type="button">改变角色
+					</a>
+				</td> -->
+				<td>
+					<%= link_to "delete",user_path(user),:data =>{:confirm => "are you sure?" },:method =>:delete,:class => 'btn btn-mini' unless user == current_user %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+<%= link_to "add a item", new_item_path ,class: "btn" %>
+<%= link_to "show items", items_path, class: "btn-info btn" %>
+</div>
