@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-#source 'http://ruby.taobao.org'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -11,6 +11,9 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'devise'
 gem 'rolify', ">= 3.2.0"
 gem 'cancan',">=1.6.8"
+
+
+
 # uploader
 gem 'carrierwave', '0.8.0'
 
@@ -18,10 +21,6 @@ gem 'carrierwave', '0.8.0'
 
 gem 'simple_form'
 
-gem 'omniauth'
-gem 'omniauth-facebook'
-# gem 'omniauth-qq'
-gem 'omniauth-github'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
@@ -34,7 +33,9 @@ group :test do
   gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
+  gem 'factory_girl', '>=4.2.0'
 end
+
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 4.0.0'
 gem 'sass-rails', '4.0.0'

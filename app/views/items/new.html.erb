@@ -1,7 +1,4 @@
 <%= simple_form_for(@item) do |f| %>
-	<%= f.error_notification %>
-	<%= display_base_errors @item %>
-
   <% if notification = f.error_notification %>
     <div class="alert alert-error fade in">
       <a class="close" data-dismiss="alert" href="#">&times;</a>

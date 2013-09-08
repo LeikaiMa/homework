@@ -4,15 +4,14 @@ class ItemsController < ApplicationController
   end
 
   def create
-  	@item = Item.new(params_item)
-  	if @item.save
-  		flash[:notice] = "create a item successfully"
-  		redirect_to root_path
-  	else
-  		flash[:alert] = "sorry..."
-  		redirect_to new_item_path
-  	end
+  	@item = Item.create!(params_item)
+
+    respond_to do |format|
+      format.html{redirect_to items_path, notice: "create a item successfully"}
+      format.js
+    end
   end
+  
 
   def new
   	@item = Item.new

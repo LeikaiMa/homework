@@ -17,6 +17,10 @@ class UsersController < ApplicationController
 		else
 			redirect_to users_path, alert: "无法删除！"
 		end
+		respond_to do |format|
+			format.html{ redirect_to users_path, notice: "删除成功！" }
+			format.js
+		end
 	end
 
 	private
